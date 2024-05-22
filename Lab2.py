@@ -5,7 +5,6 @@ def display_main_menu():
     print("Display main menu")
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
-display_main_menu()
 
 def get_user_input():
     inputs = input("Enter values: ")
@@ -17,7 +16,6 @@ def get_user_input():
     
     return floatlist
 
-userinp = get_user_input()
 
 def calc_average(userinp):
     print("Calculate average")
@@ -31,7 +29,6 @@ def calc_average(userinp):
 
     return average
 
-calc_average(userinp)
     
 def find_min_max(userinp):
     print("Find minimum and maximum temperature")
@@ -40,18 +37,25 @@ def find_min_max(userinp):
     print("The minimum temperature = " , minimum)
     print("The maximum temperature = " , maximum)
 
-find_min_max(userinp)
+    return minimum, maximum
+
 
 def sort_temperature():
     print("Sort temperature in ascending order")
     userinp.sort()
     print("Temperature in ascending order = " , userinp)
 
-sort_temperature()
 
 def calc_median_temperature():
     print("Calculate median temperature")
     median = statistics.median(userinp)
     print("The median temperature is" , median)
-
-calc_median_temperature()
+ 
+# Will only call functions if program is run directly here, not imported
+if __name__=="__main__":
+    display_main_menu()
+    userinp = get_user_input()
+    calc_average(userinp)
+    find_min_max(userinp)
+    sort_temperature()
+    calc_median_temperature()
