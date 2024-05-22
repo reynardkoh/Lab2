@@ -51,11 +51,14 @@ def calc_median_temperature():
     median = statistics.median(userinp)
     print("The median temperature is" , median)
  
-# Will only call functions if program is run directly here, not imported
-if __name__=="__main__":
+def main():
     display_main_menu()
     userinp = get_user_input()
     calc_average(userinp)
     find_min_max(userinp)
     sort_temperature()
     calc_median_temperature()
+
+# Will only call functions if program is run directly here, not imported
+if __name__=="__main__":
+    main()
